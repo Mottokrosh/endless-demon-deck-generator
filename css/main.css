@@ -7,7 +7,14 @@
 }
 
 body {
-  padding: 2rem;
+  background-image: url("../img/bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 2rem 2rem 6rem 2rem;
+  min-height: 100vh;
+  color: #F6EF22;
+  font-family: 'UnifrakturCook', cursive;
+  font-size: 130%;
 }
 
 main {
@@ -23,8 +30,18 @@ img {
 }
 
 #summon {
-  padding: 0.5rem 1rem;
+  background-image: url("../img/button.png");
+  background-repeat: no-repeat;
+  -webkit-appearance: none;
+  appearance: none;
+  background-size: contain;
+  border: none;
+  background-color: transparent;
+  padding: 1rem;
   margin-bottom: 2rem;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
 }
 
 .hidden,
