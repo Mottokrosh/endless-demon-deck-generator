@@ -1,3 +1,7 @@
+:root {
+  --red: #C8291C;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -10,7 +14,7 @@ body {
   background-image: url("../img/bg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 2rem 2rem 6rem 2rem;
+  padding: 4rem 2rem 6rem 2rem;
   min-height: 100vh;
   color: #F6EF22;
   font-family: 'UnifrakturCook', cursive;
@@ -29,46 +33,184 @@ img {
   max-width: 100%;
 }
 
+h1 {
+ color: var(--red);
+ margin: 0 0 2rem;
+ font-size: 4rem;
+ line-height: 0.6;
+ text-align: center;
+}
+
 #summon {
   background-image: url("../img/button.png");
   background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
   -webkit-appearance: none;
   appearance: none;
-  background-size: contain;
   border: none;
   background-color: transparent;
-  padding: 1rem;
-  margin-bottom: 2rem;
+  padding: 1.5rem;
+  margin: 0 0 2.5rem 0;
   color: inherit;
   font-family: inherit;
   font-size: inherit;
+  transition: transform 200ms ease-out;
 }
 
-.hidden,
-[hidden] {
-  display: none !important;
+#summon:active {
+  transform: scale(0.9) rotate(-2deg);
 }
 
-.sr-only {
-  border: 0;
-  clip: rect(0, 0, 0, 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
+.demon-part-wrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 57.91%;
+  background-color: var(--red);
+}
+
+.demon-part-wrapper:first-of-type {
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+}
+
+.demon-part-wrapper:last-of-type {
+  border-bottom-left-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
+  margin: 0 0 3rem 0;
+}
+
+.demon-part {
+  /* aspect-ratio: 240 / 139; SOON */
   position: absolute;
-  white-space: nowrap;
-  width: 1px;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 200ms ease-out;
 }
 
-.sr-only.focusable:active,
-.sr-only.focusable:focus {
-  clip: auto;
-  height: auto;
-  margin: 0;
-  overflow: visible;
-  position: static;
-  white-space: inherit;
-  width: auto;
+.demon-part[src] {
+  opacity: 1;
 }
 
+a {
+  color: inherit;
+}
+
+p {
+  text-align: center;
+  margin: 0 0 2rem 0;
+}
+
+.logo {
+  width: 120px;
+}
+
+.shake {
+  animation: shake 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-3px, 1px, 0);
+  }
+  
+  20%, 80% {
+    transform: translate3d(2px, -7px, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 2px, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, -2px, 0);
+  }
+}
+
+.noise-wrapper {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.7;
+  overflow: hidden;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.noise-wrapper:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.noise {
+  position: absolute;
+  top: -500px;
+  right: -500px;
+  bottom: -500px;
+  left: -500px;
+  background: transparent url("../img/noise.png") 0 0;
+  background-size: 320px 320px;
+  opacity: .35;
+  animation: noise 1s steps(8, end) infinite both;
+}
+
+footer {
+  font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Ubuntu, roboto, noto, arial, sans-serif;
+  font-size: 70%;
+  opacity: 0.5;
+  text-align: center;
+}
+
+@keyframes noise {
+  0% {
+    transform: translateX(0px, 0px);
+  }
+  10% {
+    transform: translate(-100px, 100px);
+  }
+  20% {
+    transform: translate(150px, -100px);
+  }
+  30% {
+    transform: translate(-100px, 100px);
+  }
+  40% {
+    transform: translate(100px, -150px);
+  }
+  50% {
+    transform: translate(-100px, 200px);
+  }
+  60% {
+    transform: translate(-200px, -100px);
+  }
+  70% {
+    transform: translateY(50px, 100px);
+  }
+  80% {
+    transform: translate(100px, -150px);
+  }
+  90% {
+    transform: translate(0px, 200px);
+  }
+  100% {
+    transform: translate(-100px, 100px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}

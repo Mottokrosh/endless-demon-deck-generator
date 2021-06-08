@@ -1,9 +1,9 @@
 <!doctype html>
-<html class="no-js" lang="en">
+<html lang="en">
 
 <head>
   <meta charset="utf-8">
-  <title>Endless Demon Deck Generator</title>
+  <title>Endless Demonator</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -18,19 +18,31 @@
   <link href="https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/main.css">
 
-  <meta name="theme-color" content="#fafafa">
+  <meta name="theme-color" content="#c8291c">
 </head>
 
 <body>
   <main>
-    <h1>Endless Demon Deck Generator</h1>
+    <h1>Endless Demonator</h1>
 
     <button id="summon">Summon Demon</button>
 
-    <img id="top">
-    <img id="middle">
-    <img id="bottom">
+    <div class="demon-part-wrapper"><img class="demon-part" id="top" alt="Top part of a random demon."></div>
+    <div class="demon-part-wrapper"><img class="demon-part" id="middle" alt="Middle part of a random demon."></div>
+    <div class="demon-part-wrapper"><img class="demon-part" id="bottom" alt="Bottom part of a random demon."></div>
+
+    <p>A perfidious online ritual for <a href="https://www.skeletonkeygames.com">SkeletonKey Games'</a> <a href="https://www.drivethrurpg.com/product/345957/The-Endless-Demon-Deck">The Endless Demon Deck</a> for <a href="https://morkborg.com">Mörk Borg</a> (and other demon-infested tabletop roleplaying games).</p>
+    <p>Ensorcelled by</p>
+    <p><a href="https://mottokrosh.com"><img class="logo" src="img/mm-logo.png" alt="Mottokrosh Machinations logo."></a></p>
+    
+    <footer>
+      The Endless Demon Deck is copyright SkeletonKey Games. Mörg Borg is copyright Ockult Örtmästare Games and Stockholm Kartell. Mottokrosh just made this random generator from it.
+      <a href="https://github.com/Mottokrosh/endless-demon-deck-generator">GitHub Repo</a> &#8226;
+      <a href="https://twitter.com/Mottokrosh">Mottokrosh Twitter</a>
+    </footer>
   </main>
+  
+  <div class="noise-wrapper"><div class="noise"></div></div>
 
   <script src="js/main.js"></script>
 
